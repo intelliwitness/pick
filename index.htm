@@ -16,7 +16,7 @@
     }
   var author;var handle;
   function loadpost(author,permlink, type){
-    steem.api.setOptions({ url: 'https://whaleshares.io/ws' });
+    steem.api.setOptions({ url: 'https://rpc.wls.services' });
     steem.api.getContentReplies(author, permlink, function(err, result) {
       //console.log(err, result);
       if (err) {
