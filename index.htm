@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>Picker : Steem comment winner </title>
-  <meta name="description" content="steem comment picker to choose random winner for your contests and challenges">
-  <meta property="og:title" content="steem comment picker">
-  <meta property="og:site_name" content="pick.esteem.ws">
-  <meta property="og:description" content="steem comment picker to choose random winner for your contests and challenges">
+  <title>Picker : Whaleshares comment winner (forked from Steem commment picker by good-karma)</title>
+  <meta name="description" content="whaleshares comment picker to choose random winner for your contests and challenges">
+  <meta property="og:title" content="whaleshares comment picker">
+  <meta property="og:site_name" content="danevent.ml/wls.min.js">
+  <meta property="og:description" content="whaleshares comment picker to choose random winner for your contests and challenges">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdn.steemjs.com/lib/latest/steem.min.js"></script>
+  <script src="./files/wls.min.js"></script>
   <script src="./files/clipboard.min.js"></script>
   <script type="text/javascript">
     function getRandom(min, max) {
@@ -16,20 +16,20 @@
     }
   var author;var handle;
   function loadpost(author,permlink, type){
-    steem.api.setOptions({ url: 'https://api.steemit.com' });
+    steem.api.setOptions({ url: 'https://whaleshares.io/ws' });
     steem.api.getContentReplies(author, permlink, function(err, result) {
       //console.log(err, result);
       if (err) {
-        $("#count").html('Error occured! Try again!');
+        $("#count").html('An Error occured! Please try again!');
       }
 
       if (result) {
-        $("#count").html('Amount of unique commenters: '+result.length);
+        $("#count").html('Total unique commenters: '+result.length);
         if (type === 'random') {
           var rnd = getRandom(0, result.length);
           $("#loader").fadeOut();
           $("#source").html('Winner: \n'+result[rnd].author+'\n\nComment: \n'+result[rnd].body);
-          $("#links").html('https://steemit.com'+result[rnd].url);
+          $("#links").html('https://whaleshares.io'+result[rnd].url);
           $(".clipbtn").fadeIn();
           $('#source').fadeIn();
           $('#links').fadeIn();  
@@ -44,7 +44,7 @@
           }
           $("#loader").fadeOut();
           $("#source").html('Winner: \n'+result[ind].author+'\n\nComment: \n'+result[ind].body);
-          $("#links").html('https://steemit.com'+result[ind].url);
+          $("#links").html('https://whaleshares.io'+result[ind].url);
           $(".clipbtn").fadeIn();
           $('#source').fadeIn();
           $('#links').fadeIn();  
@@ -59,7 +59,7 @@
           }
           $("#loader").fadeOut();
           $("#source").html('Winner: \n'+result[ind].author+'\n\nComment: \n'+result[ind].body);
-          $("#links").html('https://steemit.com'+result[ind].url);
+          $("#links").html('https://whaleshares.io'+result[ind].url);
           $(".clipbtn").fadeIn();
           $('#source').fadeIn();
           $('#links').fadeIn();  
@@ -74,7 +74,7 @@
           }
           $("#loader").fadeOut();
           $("#source").html('Winner: \n'+result[ind].author+'\n\nComment: \n'+result[ind].body);
-          $("#links").html('https://steemit.com'+result[ind].url);
+          $("#links").html('https://whaleshares.io'+result[ind].url);
           $(".clipbtn").fadeIn();
           $('#source').fadeIn();
           $('#links').fadeIn();  
@@ -153,11 +153,11 @@
   </style>
 </head><body>
 <div id="outerContainer">
-<a href="https://pick.esteem.ws"><img src="./files/logo.png" class="logo"></a><br><br>
+<a href="http://danevent.ml"><img src="./files/logo.png" class="logo"></a><br><br>
   <form id="permlink">
-    <input type="text" id="permlinkstr" name="permlink" value="good-karma/day-1-steem-advent-calendar-2017-win-prize-everyday-93dc41e1c99f4" placeholder="author/permlink"><br>
+    <input type="text" id="permlinkstr" name="permlink" value="username/the-title-of-the-post" placeholder="author/permlink"><br>
     <input type="submit" id="submitbutton" value="Pick random winner">
-    <input type="submit" id="submitbutton2" value="Top voted">
+    <input type="submit" id="submitbutton2" value="Top rewarded">
     <input type="submit" id="submitbutton3" value="Top engaged">
     <input type="submit" id="submitbutton4" value="Top earned">
   </form><br>
