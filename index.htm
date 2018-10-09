@@ -20,7 +20,7 @@
     steem.api.getContentReplies(author, permlink, function(err, result) {
       //console.log(err, result);
       if (err) {
-        $("#count").html('An Error occured! Please try again!');
+        $("#count").html('ERROR: RPC Node temporary problem? Please try later.');
       }
 
       if (result) {
@@ -153,7 +153,7 @@
   </style>
 </head><body>
 <div id="outerContainer">
-<a href="http://danevent.ml"><img src="./files/logo.png" class="logo"></a><br><br>
+<a href="http://danevent.ml"><img src="./files/whaleshares-picker-logo.png" class="logo"></a><br><br>
   <form id="permlink">
     <input type="text" id="permlinkstr" name="permlink" value="username/the-title-of-the-post" placeholder="author/permlink"><br>
     <input type="submit" id="submitbutton" value="Pick random winner">
