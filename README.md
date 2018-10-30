@@ -12,7 +12,7 @@ It is recommended you follow and vote witness good-karma for the steem blockchai
 You can download the source code and run it on your own computer.
 
 ## Try it online with this temporary website test:
-### http://danevent.ml/pick
+### http://pick.appservers.ml
 
 (Better URL will be released soon)
 
