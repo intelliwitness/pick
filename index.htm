@@ -93,6 +93,10 @@
       event.preventDefault();
       $("#loader").fadeIn();
       var handle = $("#permlinkstr").val();
+      if (handle.startsWith("https")) {
+         var posturl=handle.split("@");
+         handle=posturl[1];
+      }
       if (handle.startsWith("@")){handle=handle.substr(1);}
       handle = handle.split("/");
       var author = handle[0];
@@ -103,6 +107,10 @@
       event.preventDefault();
       $("#loader").fadeIn();
       var handle = $("#permlinkstr").val();
+      if (handle.startsWith("https")) {
+         var posturl=handle.split("@");
+         handle=posturl[1];
+      }
       if (handle.startsWith("@")){handle=handle.substr(1);}
       handle = handle.split("/");
       var author = handle[0];
@@ -113,6 +121,10 @@
       event.preventDefault();
       $("#loader").fadeIn();
       var handle = $("#permlinkstr").val();
+      if (handle.startsWith("https")) {
+         var posturl=handle.split("@");
+         handle=posturl[1];
+      }
       if (handle.startsWith("@")){handle=handle.substr(1);}
       handle = handle.split("/");
       var author = handle[0];
@@ -123,6 +135,10 @@
       event.preventDefault();
       $("#loader").fadeIn();
       var handle = $("#permlinkstr").val();
+      if (handle.startsWith("https")) {
+         var posturl=handle.split("@");
+         handle=posturl[1];
+      }
       if (handle.startsWith("@")){handle=handle.substr(1);}
       handle = handle.split("/");
       var author = handle[0];
